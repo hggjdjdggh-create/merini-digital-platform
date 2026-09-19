@@ -1,0 +1,2 @@
+import { getDictionary } from '../layout'; import { PageShell } from '@/components/seo/JsonLd';
+export default function Work({ params }: { params: { locale: 'en'|'fr'|'ar'|'es' } }) { const d=getDictionary(params.locale); return <PageShell><h1 className="text-5xl font-bold">{d.work.title}</h1><p className="mt-5 max-w-2xl text-lg text-black/65">{d.work.intro}</p><div className="mt-12 border border-dashed border-black/20 p-10 text-black/60">{d.work.note}</div></PageShell>; }

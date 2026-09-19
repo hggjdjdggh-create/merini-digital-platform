@@ -1,0 +1,2 @@
+import { getDictionary } from '../layout'; import { PageShell } from '@/components/seo/JsonLd';
+export default function Faq({ params }: { params: { locale: 'en'|'fr'|'ar'|'es' } }) { const d=getDictionary(params.locale); return <PageShell><h1 className="text-5xl font-bold">{d.faq.title}</h1><div className="mt-12 max-w-3xl space-y-5">{d.faq.items.map(([q,a])=><details key={q} className="border-b border-black/15 py-5"><summary className="cursor-pointer font-semibold">{q}</summary><p className="mt-3 text-black/65">{a}</p></details>)}</div></PageShell>; }

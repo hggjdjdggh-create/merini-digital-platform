@@ -1,0 +1,3 @@
+import { getDictionary } from '../layout';
+import { PageShell } from '@/components/seo/JsonLd';
+export default function Services({ params }: { params: { locale: 'en'|'fr'|'ar'|'es' } }) { const d = getDictionary(params.locale); return <PageShell><h1 className="max-w-3xl text-5xl font-bold">{d.services.title}</h1><p className="mt-5 max-w-2xl text-lg text-black/65">{d.services.intro}</p><div className="mt-14 grid gap-5 md:grid-cols-3">{d.services.items.map(([title, text]) => <article key={title} className="border border-black/10 bg-white p-7"><h2 className="text-xl font-semibold">{title}</h2><p className="mt-4 text-black/60">{text}</p></article>)}</div></PageShell>; }

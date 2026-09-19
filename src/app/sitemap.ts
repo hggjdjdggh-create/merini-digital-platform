@@ -1,0 +1,2 @@
+import type { MetadataRoute } from 'next'; import { siteConfig } from '@/config/site';
+export default function sitemap():MetadataRoute.Sitemap { const pages=['','services','work','process','pricing','about','faq','contact','audit']; return siteConfig.locales.flatMap((locale)=>pages.map((page)=>({url:`${siteConfig.url}/${locale}${page?`/${page}`:''}`,lastModified:new Date(),changeFrequency:'monthly' as const,priority:page===''?1:.7}))); }
